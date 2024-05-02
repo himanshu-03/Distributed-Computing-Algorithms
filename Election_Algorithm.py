@@ -8,9 +8,9 @@ class GFG:
         self.TotalProcess = 0
         self.process = []
     
-    def initialiseGFG(self):
-        print("No of processes 5")
-        self.TotalProcess = 5
+    def initialiseGFG(self, num_processes):
+        print("No of processes:", num_processes)
+        self.TotalProcess = num_processes
         self.process = [Pro(i) for i in range(self.TotalProcess)]
     
     def Election(self):
@@ -63,8 +63,9 @@ class GFG:
         return max_id_process_index
 
 def main():
+    num_processes = int(input("Enter the number of processes: "))
     obj = GFG()
-    obj.initialiseGFG()
+    obj.initialiseGFG(num_processes)
     obj.Election()
 
 if __name__ == "__main__":
