@@ -13,6 +13,8 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 server_address = ('', MULTICAST_PORT)
 sock.bind(server_address)
 
+print("Server listening on", (MULTICAST_GROUP, MULTICAST_PORT))
+
 # Join the multicast group
 group = socket.inet_aton(MULTICAST_GROUP)
 mreq = struct.pack('4sL', group, socket.INADDR_ANY)
